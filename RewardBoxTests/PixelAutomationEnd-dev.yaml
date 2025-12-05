@@ -1,0 +1,50 @@
+appId: box.reward.android.app.dev
+---
+- startRecording: recording
+- launchApp:
+    appId: "box.reward.android.app.dev"
+    clearState: true
+    stopApp: true
+    permissions:
+      all: "unset"
+- tapOn: "Log in with Google"
+- tapOn: ".*mailtime.com"
+- tapOn: "Start"
+- tapOn: "Grant Permission"
+- tapOn:
+    id: "com.android.permissioncontroller:id/permission_allow_foreground_only_button"
+- tapOn: "Grant Permission"
+- tapOn:
+    id: "com.android.permissioncontroller:id/permission_allow_button"
+- tapOn: "Agree"
+- tapOn: "Read Tutorial"
+- tapOn: "Go to phone settings"
+- tapOn:
+    id: "box.reward.android.app.dev:id/accessibility_hint"
+- tapOn: ".*Tap here to enable!.*"
+- tapOn:
+    id: "android:id/switch_widget"
+- tapOn:
+    id: "android:id/accessibility_permission_enable_allow_button"
+#- "back"
+- tapOn: "Female"
+- tapOn: "Select your birthday"
+- tapOn: "Done"
+- tapOn: "regionLabel"
+- tapOn: "United States (US)"
+- tapOn: "incomeLevelLabel"
+- tapOn: "< $800 USD"
+- tapOn: "Save"
+- tapOn: "Start earning!"
+- launchApp:
+    appId: "com.ubercab"
+- tapOn:
+    id: "PHONE_COUNTRY_CODE"
+- tapOn:
+    id: "bui4val-157"
+- tapOn:
+    id: "PHONE_NUMBER"
+- inputRandomNumber:
+    length: 8
+- stopRecording
+
