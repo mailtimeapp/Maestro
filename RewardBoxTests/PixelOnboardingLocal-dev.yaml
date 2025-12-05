@@ -1,0 +1,84 @@
+appId: box.reward.android.app.dev
+---
+# - startRecording: PixelAutomation-dev
+- launchApp:
+    appId: box.reward.android.app.dev
+    clearState: true
+    stopApp: true
+    permissions:
+      all: unset
+- tapOn: Log in with Google
+- tapOn: .*mailtime.com
+- tapOn: Start
+- tapOn: Grant Permission
+- tapOn:
+    id: com.android.permissioncontroller:id/permission_allow_foreground_only_button
+- tapOn: Grant Permission
+- tapOn:
+    id: com.android.permissioncontroller:id/permission_allow_button
+- tapOn: Agree
+- tapOn: Read Tutorial
+- tapOn: Go to phone settings
+- tapOn:
+    id: box.reward.android.app.dev:id/accessibility_hint
+- tapOn: .*Tap here to enable!.*
+- tapOn:
+    id: android:id/switch_widget
+- tapOn:
+    id: android:id/accessibility_permission_enable_allow_button
+- back
+- tapOn: Female
+- tapOn: Select your birthday
+- tapOn: Done
+- tapOn: regionLabel
+- tapOn: United States (US)
+- tapOn: incomeLevelLabel
+- tapOn: < $800 USD
+- tapOn: Save
+- tapOn: Start earning!
+- launchApp:
+    appId: com.ubercab
+- extendedWaitUntil:
+    visible:
+      id: title
+    timeout: 10000
+- swipe:  
+    start: 1%, 50%
+    end: 10%, 50%
+    duration: 300
+- tapOn:
+    id: com.ubercab:id/welcome_screen_continue
+- tapOn:
+    id: PHONE_COUNTRY_CODE
+- tapOn:
+    id: PHONE_NUMBER
+- inputRandomNumber:
+    length: 8
+- launchApp:
+    appId: box.reward.android.app.dev
+    clearState: false
+    stopApp: false
+- tapOn:
+    text: homePageTitle
+    repeat: 6
+    delay: 500
+- scrollUntilVisible:
+    element: View Screen Node Records
+    direction: DOWN
+    timeout: 50000
+    speed: 40
+    visibilityPercentage: 100
+    centerElement: true
+- tapOn: View Screen Node Records
+- scrollUntilVisible:
+    element: VIEW_CLICKED
+    direction: DOWN
+    timeout: 50000
+    speed: 40
+    visibilityPercentage: 100
+    centerElement: true
+- assertVisible:
+    text: VIEW_CLICKED
+    enabled: true
+# - stopRecording
+

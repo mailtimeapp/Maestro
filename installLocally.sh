@@ -3,7 +3,8 @@
 rm -rf /tmp/kotlin-sdk
 git clone https://github.com/steviec/kotlin-sdk.git /tmp/kotlin-sdk
 
-./gradlew :maestro-android:assembleDebug :maestro-android:assembleAndroidTest :maestro-cli:installDist
+./gradlew clean
+./gradlew --stacktrace :maestro-android:assembleDebug :maestro-android:assembleAndroidTest :maestro-cli:installDist
 
 rm -rf ~/.maestro/bin
 rm -rf ~/.maestro/lib
