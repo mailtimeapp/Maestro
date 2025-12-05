@@ -8,6 +8,12 @@ plugins {
     alias(libs.plugins.mavenPublish)
 }
 
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
 application {
     applicationName = "maestro-studio"
     mainClass = "maestro.studio.ServerKt"
