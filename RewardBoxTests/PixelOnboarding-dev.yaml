@@ -1,6 +1,6 @@
 appId: box.reward.android.app.dev
 ---
-- startRecording: recording
+# - startRecording: PixelAutomation-dev
 - launchApp:
     appId: "box.reward.android.app.dev"
     clearState: true
@@ -26,7 +26,7 @@ appId: box.reward.android.app.dev
     id: "android:id/switch_widget"
 - tapOn:
     id: "android:id/accessibility_permission_enable_allow_button"
-#- "back"
+- "back"
 - tapOn: "Female"
 - tapOn: "Select your birthday"
 - tapOn: "Done"
@@ -46,5 +46,5 @@ appId: box.reward.android.app.dev
     id: "PHONE_NUMBER"
 - inputRandomNumber:
     length: 8
-- stopRecording
+# - stopRecording
 
