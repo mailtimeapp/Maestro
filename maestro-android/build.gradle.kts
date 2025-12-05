@@ -36,6 +36,12 @@ kotlin.sourceSets.configureEach {
     languageSettings.optIn("kotlin.RequiresOptIn")
 }
 
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
 android {
     namespace = "dev.mobile.maestro"
     compileSdk = 34

@@ -13,6 +13,12 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
 group = "dev.mobile"
 
 val CLI_VERSION: String by project
