@@ -1,6 +1,8 @@
-> [!TIP]
-> Great things happen when testers connect — [Join the Maestro Community](https://maestrodev.typeform.com/to/FelIEe8A)
-
+## To run RewardBox Dev automation on Pixel devices
+```sh
+./installLocally.sh
+~/.maestro/bin/maestro test RewardBoxTests/PixelOnboardingLocal-dev.yaml
+```
 
 <p align="center">
   <a href="https://www.maestro.dev">
