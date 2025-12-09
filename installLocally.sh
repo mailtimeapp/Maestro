@@ -1,7 +1,7 @@
 #!/bin/sh
 
 rm -rf /tmp/kotlin-sdk
-git clone https://github.com/steviec/kotlin-sdk.git /tmp/kotlin-sdk
+git clone --branch steviec/kotlin-1.8 https://github.com/steviec/kotlin-sdk.git /tmp/kotlin-sdk
 
 ./gradlew clean
 ./gradlew --stacktrace :maestro-android:assembleDebug :maestro-android:assembleAndroidTest :maestro-cli:installDist
