@@ -1,41 +1,6 @@
 appId: box.reward.android.app.dev
 ---
-# - startRecording: PixelOnboardingLocal-dev
-- launchApp:
-    appId: box.reward.android.app.dev
-    clearState: true
-    stopApp: true
-    permissions:
-      all: unset
-- tapOn: Log in with Google
-- tapOn: .*mailtime.com
-- tapOn: Start
-- tapOn: Grant Permission
-- tapOn:
-    id: com.android.permissioncontroller:id/permission_allow_foreground_only_button
-- tapOn: Grant Permission
-- tapOn:
-    id: com.android.permissioncontroller:id/permission_allow_button
-- tapOn: Agree
-- tapOn: Read Tutorial
-- tapOn: Go to phone settings
-- tapOn:
-    id: box.reward.android.app.dev:id/accessibility_hint
-- tapOn: .*Tap here to enable!.*
-- tapOn:
-    id: android:id/switch_widget
-- tapOn:
-    id: android:id/accessibility_permission_enable_allow_button
-- back
-- tapOn: Female
-- tapOn: Select your birthday
-- tapOn: Done
-- tapOn: regionLabel
-- tapOn: United States (US)
-- tapOn: incomeLevelLabel
-- tapOn: < $800 USD
-- tapOn: Save
-- tapOn: Start earning!
+- runFlow: PixelOnboarding-dev.yaml
 - launchApp:
     appId: com.ubercab
 - extendedWaitUntil:
@@ -78,7 +43,7 @@ appId: box.reward.android.app.dev
     element: .*VIEW_CLICKED.*
     direction: DOWN
     timeout: 50000
-    speed: 80
+    speed: 70
     visibilityPercentage: 100
     centerElement: false
 - assertVisible:
@@ -88,10 +53,9 @@ appId: box.reward.android.app.dev
     element: .*Get Started.*
     direction: DOWN
     timeout: 50000
-    speed: 80
+    speed: 70
     visibilityPercentage: 100
     centerElement: false
 - assertVisible:
     text: .*Get Started.*
     enabled: true
-# - stopRecording

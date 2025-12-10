@@ -1,0 +1,64 @@
+appId: box.reward.android.app.dev
+---
+- runFlow: PixelOnboarding-dev.yaml
+- launchApp:
+    appId: com.ubercab
+- tapOn: Where to?
+- tapOn:
+    id: 'com.ubercab:id/edit_text'
+- inputText: 1 apple way
+- tapOn: Apple Park
+- runFlow:
+    when:
+      visible: Verification required
+    commands:
+      - tapOn: Cancel
+- doubleTapOn: .*UberX.*
+- tapOn: Choose UberX
+- assertVisible:
+    id: 'com.ubercab:id/confirm_button_location_editor_sheet_section'
+- extendedWaitUntil:
+    visible: h9h9fhuae
+    optional: true
+    timeout: 4000
+- launchApp:
+    appId: box.reward.android.app.dev
+    clearState: false
+    stopApp: false
+- tapOn:
+    text: homePageTitle
+    repeat: 6
+    delay: 500
+- scrollUntilVisible:
+    element: View Screen Node Records
+    direction: DOWN
+    timeout: 50000
+    speed: 40
+    visibilityPercentage: 100
+    centerElement: true
+- tapOn: View Screen Node Records
+- evalScript: >-
+    ${output.viewClicked = false; output.announcement = false; output.applePark
+    = false}
+- repeat:
+    times: 20
+    while:
+      'true': '${!output.viewClicked || !output.announcement || !output.applePark}'
+    commands:
+      - runFlow:
+          when:
+            visible: VIEW_CLICKED.*com.ubercab.*Where to?.*
+          commands:
+            - evalScript: '${output.viewClicked = true}'
+      - runFlow:
+          when:
+            visible: ANNOUNCEMENT.*com.ubercab.*results found.*
+          commands:
+            - evalScript: '${output.announcement = true}'
+      - runFlow:
+          when:
+            visible: 'VIEW_CLICKED.*com.ubercab.*Apple Park, 1 Apple Park Way.*'
+          commands:
+            - evalScript: '${output.applePark = true}'
+      - scroll
+- assertTrue: '${output.viewClicked && output.announcement && output.applePark}'
