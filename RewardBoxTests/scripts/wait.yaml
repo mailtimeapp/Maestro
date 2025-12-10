@@ -1,0 +1,7 @@
+appId: com.ubercab
+---
+- tapOn: 
+    text: randText
+    optional: true
+    repeat: 2
+    delay: 2000
