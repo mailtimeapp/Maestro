@@ -1,0 +1,24 @@
+appId: com.mailtime.demoasapp.dev
+---
+- launchApp:
+    appId: com.mailtime.demoasapp.dev
+    clearState: true
+    stopApp: true
+    permissions:
+      all: unset
+- tapOn:
+    id: com.mailtime.demoasapp.dev:id/input_username
+- inputText: inho@mailtime.com
+- tapOn:
+    id: com.mailtime.demoasapp.dev:id/button_login
+- tapOn:
+    id: com.android.permissioncontroller:id/permission_allow_foreground_only_button
+- tapOn:
+    id: com.mailtime.demoasapp.dev:id/enable_button
+- tapOn:
+    id: android:id/button1
+- tapOn: .*Researcher Connect
+- tapOn:
+    id: android:id/switch_widget
+- tapOn:
+    id: android:id/accessibility_permission_enable_allow_button
