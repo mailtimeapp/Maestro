@@ -1,6 +1,6 @@
 appId: box.reward.android.app.dev
 ---
-- runFlow: PixelOnboarding-dev.yaml
+- runFlow: RewardBoxOnboarding-dev.yaml
 - launchApp:
     appId: com.ubercab
 - extendedWaitUntil:

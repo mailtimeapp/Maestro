@@ -1,0 +1,27 @@
+appId: box.reward.android.app.dev
+---
+- startRecording: UberCallCarComplete
+- runFlow: RewardBoxOnboarding-dev.yaml
+- runFlow: ResearcherConnectOnboarding-dev.yaml
+- launchApp:
+    appId: com.ubercab
+- tapOn: Where to?
+- tapOn:
+    id: 'com.ubercab:id/edit_text'
+- inputText: 1 apple way
+- tapOn: Apple Park
+- runFlow:
+    when:
+      visible: Verification required
+    commands:
+      - tapOn: Cancel
+- doubleTapOn: .*UberX.*
+- tapOn: Choose UberX
+- assertVisible:
+    id: 'com.ubercab:id/confirm_button_location_editor_sheet_section'
+- extendedWaitUntil:
+    visible: h9h9fhuae
+    optional: true
+    timeout: 2000
+- runFlow: RewardBoxUberValidation.yaml
+- stopRecording
