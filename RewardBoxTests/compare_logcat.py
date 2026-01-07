@@ -3,8 +3,8 @@ import re
 
 # --- CONFIGURATION ---
 # Update these paths if your files are located elsewhere
-RB_LOG_PATH = os.path.expanduser("~/Documents/RBvalidation/RBDev.txt")
-RC_LOG_PATH = os.path.expanduser("~/Documents/RBvalidation/RCDev.txt")
+RB_LOG_PATH = os.path.expanduser("/tmp/RBValidation/RBDev.txt")
+RC_LOG_PATH = os.path.expanduser("/tmp/RBValidation/RCDev.txt")
 
 def parse_fingerprints(file_path):
     """

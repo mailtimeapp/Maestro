@@ -1,28 +1,6 @@
-appId: box.reward.android.app.dev
+appId: com.mailtime.demoasapp.dev
 ---
-- evalScript: ${output.viewClicked = output.announcement = output.applePark = false}
-- repeat:
-    times: 20
-    while:
-      true: ${!output.viewClicked || !output.announcement || !output.applePark}
-    commands:
-      - runFlow:
-          when:
-            visible:
-              text: VIEW_CLICKED.*com.ubercab.*Where to?.*
-          commands:
-            - evalScript: ${output.viewClicked = true}
-      - runFlow:
-          when:
-            visible:
-              text: ANNOUNCEMENT.*com.ubercab.*results found.*
-          commands:
-            - evalScript: ${output.announcement = true}
-      - runFlow:
-          when:
-            visible:
-              text: VIEW_CLICKED.*com.ubercab.*Apple Park, 1 Apple Park Way.*
-          commands:
-            - evalScript: ${output.applePark = true}
-      - scroll
-- assertTrue: ${output.viewClicked && output.announcement && output.applePark}
+- copyTextFrom:
+    id: android:id/message
+- evalScript: ${console.log(maestro.copiedText)}
+    

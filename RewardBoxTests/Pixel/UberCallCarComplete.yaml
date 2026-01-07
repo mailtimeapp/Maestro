@@ -1,8 +1,8 @@
 appId: box.reward.android.app.dev
 ---
 - startRecording: UberCallCarComplete
-- runFlow: RewardBoxOnboarding-dev.yaml
 - runFlow: ResearcherConnectOnboarding-dev.yaml
+- runFlow: RewardBoxOnboarding-dev.yaml
 - launchApp:
     appId: com.ubercab
 - tapOn: Where to?

@@ -6,6 +6,8 @@ appId: box.reward.android.app.dev
     stopApp: true
     permissions:
       all: unset
+- tapOn: .*giftIcon.*
+- tapOn: Start Earning
 - tapOn: Log in with Google
 - tapOn: .*mailtime.com
 - tapOn: Start
@@ -39,3 +41,4 @@ appId: box.reward.android.app.dev
 - tapOn: < $800 USD
 - tapOn: Save
 - tapOn: Start earning!
+- tapOn: dismissAd
