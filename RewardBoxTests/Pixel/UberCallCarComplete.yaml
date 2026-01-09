@@ -1,7 +1,5 @@
 appId: box.reward.android.app.dev
 ---
-- startRecording: UberCallCarComplete
-- runFlow: ResearcherConnectOnboarding-dev.yaml
 - runFlow: RewardBoxOnboarding-dev.yaml
 - launchApp:
     appId: com.ubercab
@@ -24,4 +22,3 @@ appId: box.reward.android.app.dev
     optional: true
     timeout: 2000
 - runFlow: RewardBoxUberValidation.yaml
-- stopRecording

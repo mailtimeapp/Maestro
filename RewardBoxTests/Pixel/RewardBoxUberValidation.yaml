@@ -40,3 +40,12 @@ appId: box.reward.android.app.dev
             - evalScript: '${output.applePark = true}'
       - scroll
 - assertTrue: '${output.viewClicked && output.announcement && output.applePark}'
+- tapOn: Back
+- scrollUntilVisible:
+    element: Trigger data sync
+    direction: DOWN
+    timeout: 50000
+    speed: 40
+    visibilityPercentage: 100
+    centerElement: true
+- tapOn: Trigger data sync
