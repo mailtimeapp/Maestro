@@ -93,6 +93,8 @@ android {
 }
 
 tasks.register<Copy>("copyMaestroAndroid") {
+    dependsOn("assembleDebug")
+
     val maestroAndroidApkPath = "outputs/apk/debug/maestro-android-debug.apk"
     val maestroAndroidApkDest = "../../maestro-client/src/main/resources"
     val maestroAndroidApkDestPath = "../../maestro-client/src/main/resources/maestro-android-debug.apk"
@@ -110,6 +112,8 @@ tasks.register<Copy>("copyMaestroAndroid") {
 }
 
 tasks.register<Copy>("copyMaestroServer") {
+    dependsOn("assembleAndroidTest")
+
     val maestroServerApkPath = "outputs/apk/androidTest/debug/maestro-android-debug-androidTest.apk"
     val maestroServerApkDest = "../../maestro-client/src/main/resources"
     val maestroServerApkDestPath = "../../maestro-client/src/main/resources/maestro-android-debug-androidTest.apk"
